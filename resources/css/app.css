@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Fonts */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Playfair Display', serif;
+
+    /* Custom Colors - Warm Perfume Palette */
+    --color-primary-50: #fef8f3;
+    --color-primary-100: #fdeee0;
+    --color-primary-200: #fbd9bd;
+    --color-primary-300: #f8be8f;
+    --color-primary-400: #f49b5f;
+    --color-primary-500: #f17d3b;
+    --color-primary-600: #e26020;
+    --color-primary-700: #bc4818;
+    --color-primary-800: #96391a;
+    --color-primary-900: #793119;
+    --color-primary-950: #41170b;
+
+    --color-accent: #FF6B35;
+    --color-accent-dark: #e55a2b;
+
+    --color-warm-50: #faf7f2;
+    --color-warm-100: #f5ede0;
+    --color-warm-200: #e8d5bb;
+    --color-warm-300: #d9b88f;
+    --color-warm-400: #c99761;
+    --color-warm-500: #bc7d42;
+    --color-warm-600: #af6537;
+    --color-warm-700: #91502f;
+    --color-warm-800: #76422b;
+    --color-warm-900: #603826;
+    --color-warm-950: #341c13;
+
+    --color-gold-light: #f4e4c1;
+    --color-gold: #d4af37;
+    --color-gold-dark: #b8941f;
+    --color-hero-bg: #e8dccb;
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Global Styles */
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: #fafafa;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(to right,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%);
+    background-size: 1000px 100%;
+}
+
+.bg-hero {
+    background-color: var(--color-hero-bg);
+}
+
+.bg-gold-light {
+    background-color: var(--color-gold-light);
+}
+
+@keyframes marquee-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animate-marquee-left {
+    animation: marquee-left 50s linear infinite;
+}
+
+.animate-marquee-right {
+    animation: marquee-right 50s linear infinite;
+}
+
+.group:hover .animate-marquee-left,
+.group:hover .animate-marquee-right {
+    animation-play-state: paused;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+    animation-play-state: paused;
+}
