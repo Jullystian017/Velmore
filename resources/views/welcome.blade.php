@@ -19,32 +19,132 @@
 
 <body class="bg-gray-50 overflow-x-hidden font-sans">
     <!-- Navigation -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-[60] w-[95%] max-w-7xl">
         <div class="bg-white/80 backdrop-blur-md border border-white/20 rounded-full px-6 py-4 shadow-sm">
             <div class="flex items-center justify-between">
-                <!-- Hamburger Menu -->
-                <button class="p-1 hover:opacity-70 transition-opacity">
+                <!-- Hamburger Menu Toggle -->
+                <button id="menu-toggle" class="p-1 hover:opacity-70 transition-opacity cursor-pointer relative z-10">
                     <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h8M4 18h16" />
                     </svg>
                 </button>
 
                 <!-- Centered Logo -->
                 <div class="absolute left-1/2 -translate-x-1/2">
-                    <h1 class="text-2xl font-bold tracking-[0.1] text-gray-900">VELMORE</h1>
+                    <a href="/">
+                        <h1 class="text-2xl font-bold tracking-[0.1] text-gray-900">VELMORE</h1>
+                    </a>
                 </div>
 
-                <!-- Shopping Bag -->
-                <button class="p-1 hover:opacity-70 transition-opacity">
+                <!-- Shopping Bag Toggle -->
+                <button id="cart-toggle" class="p-1 hover:opacity-70 transition-opacity cursor-pointer relative z-10">
                     <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                     </svg>
+                    <!-- Cart Badge -->
+                    <span
+                        class="absolute -top-1 -right-1 bg-orange-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
                 </button>
             </div>
         </div>
     </nav>
+
+    <!-- Navigation Side Menu -->
+    <div id="side-menu" class="fixed inset-0 z-[70] hidden">
+        <!-- Backdrop -->
+        <div id="menu-backdrop"
+            class="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
+
+        <!-- Menu Content -->
+        <div id="menu-content"
+            class="absolute top-0 left-0 h-full w-full max-w-sm bg-white shadow-2xl -translate-x-full transition-transform duration-500 ease-out p-12 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-16">
+                    <h2 class="text-2xl font-bold tracking-tight text-gray-900">VELMORE</h2>
+                    <button id="menu-close" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                        <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="space-y-8">
+                    <a href="/"
+                        class="block text-4xl font-bold text-gray-900 hover:text-orange-600 transition-colors">Home</a>
+                    <a href="/about"
+                        class="block text-4xl font-bold text-gray-900 hover:text-orange-600 transition-colors">About</a>
+                    <a href="/product"
+                        class="block text-4xl font-bold text-gray-900 hover:text-orange-600 transition-colors">Product</a>
+                    <a href="/contact"
+                        class="block text-4xl font-bold text-gray-900 hover:text-orange-600 transition-colors">Contact</a>
+                </nav>
+            </div>
+
+            <div class="space-y-6">
+                <div class="pt-8 border-t border-gray-100">
+                    <p class="text-sm text-gray-500 mb-4 font-medium uppercase tracking-widest">Follow us</p>
+                    <div class="flex gap-6">
+                        <a href="#"
+                            class="text-gray-900 hover:text-orange-600 transition-colors font-semibold">Instagram</a>
+                        <a href="#"
+                            class="text-gray-900 hover:text-orange-600 transition-colors font-semibold">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-[70] hidden">
+        <!-- Backdrop -->
+        <div id="cart-backdrop"
+            class="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
+
+        <!-- Cart Content -->
+        <div id="cart-content"
+            class="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform duration-500 ease-out p-8 flex flex-col">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-bold text-gray-900">Your Cart</h2>
+                <button id="cart-close" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Empty Cart State -->
+            <div class="flex-1 flex flex-col items-center justify-center text-center p-8">
+                <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Cart is empty</h3>
+                <p class="text-gray-500 mb-8">Looks like you haven't added anything to your cart yet.</p>
+                <button class="bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition-all">
+                    Start Shopping
+                </button>
+            </div>
+
+            <!-- Cart Footer (Sticky at bottom) -->
+            <div class="pt-8 border-t border-gray-100">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="text-gray-500 font-medium">Subtotal</span>
+                    <span class="text-2xl font-bold text-gray-900">$0.00</span>
+                </div>
+                <button
+                    class="w-full bg-black text-white py-5 rounded-full font-bold hover:bg-gray-800 transition-all shadow-xl shadow-black/10 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled>
+                    Checkout Now
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <main class="relative h-screen min-h-[800px] w-full flex items-center overflow-hidden">
@@ -851,7 +951,7 @@
                                     d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
-                
+
                     </div>
                 </div>
             </div>
@@ -905,31 +1005,31 @@
                 </div>
                 <!-- Navigation sets -->
                 <div>
-                    <h4 class="font-bold text-gray-900 mb-6">Company</h4>
+                    <h4 class="font-bold text-gray-900 mb-6 uppercase tracking-widest text-xs">Company</h4>
                     <ul class="space-y-4 text-gray-500">
+                        <li><a href="/about" class="hover:text-orange-500 transition-colors">Our Story</a></li>
                         <li><a href="#" class="hover:text-orange-500 transition-colors">Our Mission</a></li>
                         <li><a href="#" class="hover:text-orange-500 transition-colors">Our Vision</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors">Our Story</a></li>
                         <li><a href="#" class="hover:text-orange-500 transition-colors">Meet Our Team</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-gray-900 mb-6">Collections</h4>
+                    <h4 class="font-bold text-gray-900 mb-6 uppercase tracking-widest text-xs">Collections</h4>
                     <ul class="space-y-4 text-gray-500">
-                        <li><a href="#" class="hover:text-orange-500 transition-colors">Noir</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors">Essence</a></li>
+                        <li><a href="/product" class="hover:text-orange-500 transition-colors">All Products</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Noir Collection</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Essence Series</a></li>
                         <li><a href="#" class="hover:text-orange-500 transition-colors">Botanica</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors">New Drops</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-gray-900 mb-6">Resources</h4>
+                    <h4 class="font-bold text-gray-900 mb-6 uppercase tracking-widest text-xs">Help</h4>
                     <ul class="space-y-4 text-gray-500">
-                        <li><a href="#" class="hover:text-orange-500 transition-colors">Scent Blog</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors">Case Studies</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors">Brand Assets</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors">Member Program</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Shipping</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Returns</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -951,7 +1051,7 @@
             <!-- Bottom: Copyright Bar -->
             <div
                 class="pt-10 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6 text-[13px] text-gray-400 font-medium font-sans">
-                <p>© Copyright 2025 Velmore (Attractive UI inspired)</p>
+                <p>© Copyright 2026 Velmore</p>
                 <div class="flex items-center gap-8">
                     <a href="#" class="hover:text-gray-900 transition-colors">Terms of Service</a>
                     <p>All Rights Reserved</p>
