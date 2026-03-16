@@ -6,10 +6,10 @@ export default function Hero() {
       {/* Full Bleed Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/velmore-hero1.png"
+          src="/velmore-hero2.png"
           alt="Velmore Hero Background"
           fill
-          className="object-cover"
+          className="object-cover object-[center_65%]"
           priority
         />
         {/* Overlay for better readability */}
@@ -17,12 +17,12 @@ export default function Hero() {
       </div>
 
       {/* Left Content */}
-      <div className="z-10 flex w-full flex-col items-start justify-center md:w-[60%] lg:w-1/2">
+      <div className="z-10 flex w-full flex-col items-start justify-center md:w-[60%] lg:w-1/2 md:-mt-20">
         <h1 className="mb-6 text-5xl font-bold leading-[1.1] tracking-tight text-neutral-900 sm:text-6xl lg:text-[72px]">
           Amazing scent that<br />
           reflects <span className="bg-gradient-to-r from-[#e8702a] to-[#d65f1a] bg-clip-text text-transparent">character</span>
         </h1>
-        <p className="mb-10 max-w-md text-lg leading-relaxed text-neutral-800/80 sm:text-xl font-medium">
+        <p className="mb-10 max-w-md text-lg leading-relaxed text-neutral-800/80 sm:text-xl font-medium line-clamp-2">
           Velmore delivers distinctive fragrances with an elegant, modern touch - made for those who stand out
         </p>
 
@@ -37,8 +37,8 @@ export default function Hero() {
       </div>
 
       {/* Floating Card Overlay (Right-aligned) */}
-      <div className="relative mt-auto flex w-full items-end justify-end md:mt-0 md:w-[40%] lg:w-1/2">
-        <div className="z-20 flex min-w-[260px] flex-col rounded-[24px] bg-white/80 backdrop-blur-md p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-white/20 sm:mr-8 lg:mr-12">
+      <div className="relative mt-auto flex w-full items-end justify-end md:mt-0 md:w-[40%] lg:w-1/2 md:translate-y-67 md:pb-12">
+        <div className="z-20 flex min-w-[260px] flex-col rounded-[24px] bg-white/80 backdrop-blur-md p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-white/20 sm:mr-0 lg:mr-0 md:translate-x-8">
           <div className="mb-3 flex w-fit items-center flex-row space-x-2 rounded-full border border-neutral-200/50 bg-white/50 px-3 py-1">
             <span className="flex h-1.5 w-1.5 items-center justify-center rounded-full bg-[#e8702a]"></span>
             <span className="text-[11px] font-bold tracking-wide text-neutral-800 uppercase">New</span>
