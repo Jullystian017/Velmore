@@ -70,10 +70,10 @@ export default function Navbar() {
             </div>
 
             <nav className="flex flex-col space-y-8">
-              {['Home', 'Collections', 'About', 'Shop', 'Contact'].map((item) => (
+              {['Home', 'About', 'Product'].map((item) => (
                 <Link 
                   key={item} 
-                  href="#" 
+                  href={`#${item.toLowerCase()}`} 
                   className="group flex items-center justify-between text-4xl font-bold tracking-tight text-neutral-900 transition-colors hover:text-[#e8702a]"
                   onClick={() => setIsMenuOpen(false)}
                 >

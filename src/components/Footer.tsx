@@ -35,19 +35,19 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link href="#" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
-                  <span>Shop Collection</span>
+                  <span>Home</span>
                   <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
-                  <span>Our Story</span>
+                  <span>About</span>
                   <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
-                  <span>Fragrance Guide</span>
+                  <span>Product</span>
                   <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
