@@ -30,7 +30,7 @@ export default function Collections() {
           <span className="mb-4 inline-block rounded-full bg-neutral-100 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-neutral-500">
             Our Collections
           </span>
-          <h2 className="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
+          <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
             Discover the fragrance<br />
             with an unlimited collection
           </h2>
@@ -41,7 +41,7 @@ export default function Collections() {
           {collectionItems.map((item, index) => (
             <div
               key={index}
-              className="group relative h-[450px] overflow-hidden rounded-[40px] shadow-sm transition-all hover:shadow-xl"
+              className="group relative h-[450px] overflow-hidden rounded-3xl shadow-sm transition-all hover:shadow-xl"
             >
               <Image
                 src={item.image}
