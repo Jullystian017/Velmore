@@ -80,10 +80,14 @@ const products = [
 
 export default function ProductPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredProducts = activeCategory === "All" 
-    ? products 
-    : products.filter(p => p.category === activeCategory);
+  const filteredProducts = products.filter(p => {
+    const matchesCategory = activeCategory === "All" || p.category === activeCategory;
+    const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          p.scents.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-[#fdfdfd] pt-32 px-6 md:px-12 lg:px-24">
@@ -100,11 +104,13 @@ export default function ProductPage() {
           </div>
           <div className="flex items-center space-x-4">
             <div className="relative group">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400 transition-colors group-focus-within:text-neutral-900" />
               <input 
                 type="text" 
-                placeholder="Search..." 
-                className="rounded-full border border-neutral-100 bg-white py-4 pl-12 pr-6 text-sm font-medium shadow-sm transition-all focus:border-neutral-900 focus:outline-none w-64"
+                placeholder="Search scent, brand..." 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="rounded-full border border-neutral-200 bg-white py-4 pl-14 pr-6 text-sm font-semibold text-neutral-900 placeholder:text-neutral-300 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all focus:border-neutral-900 focus:ring-4 focus:ring-neutral-900/5 focus:outline-none w-72 lg:w-80 group-hover:border-neutral-300"
               />
             </div>
           </div>

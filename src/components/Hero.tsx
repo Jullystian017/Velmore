@@ -22,7 +22,7 @@ export default function Hero() {
           Authentic luxury,<br />
           student <span className="bg-gradient-to-r from-[#e8702a] to-[#d65f1a] bg-clip-text text-transparent">price</span>
         </h1>
-        <p className="mb-10 max-w-md text-lg leading-relaxed text-neutral-500 sm:text-xl font-medium line-clamp-2">
+        <p className="mb-10 max-w-md text-lg leading-relaxed text-neutral-700 sm:text-xl font-medium line-clamp-2">
           Your favorite designer brands and local favorites, curated for students. 100% authentic decants for every style.
         </p>
 
@@ -36,23 +36,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Floating Card Overlay (Right-aligned) */}
-      <div className="relative mt-auto flex w-full items-end justify-end md:mt-0 md:w-[40%] lg:w-1/2 md:translate-y-67 md:pb-12">
-        <div className="z-20 flex min-w-[260px] flex-col rounded-[24px] bg-white/80 backdrop-blur-md p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-white/20 sm:mr-0 lg:mr-0 md:translate-x-8">
-          <div className="mb-3 flex w-fit items-center flex-row space-x-2 rounded-full border border-neutral-200/50 bg-white/50 px-3 py-1">
-            <span className="flex h-1.5 w-1.5 items-center justify-center rounded-full bg-[#e8702a]"></span>
-            <span className="text-[11px] font-bold tracking-wide text-neutral-800 uppercase">New</span>
-          </div>
-          <h3 className="text-xl font-bold text-neutral-900">Velour Dark Gold</h3>
-          <p className="mt-1 text-sm text-neutral-500 font-medium">Luxury, Richness, Warmth</p>
-          <div className="mt-4 flex items-center justify-between">
-            <p className="text-xl font-bold text-[#e8702a]">$ 120.00</p>
-            <button className="rounded-full bg-neutral-900 px-4 py-1.5 text-xs font-bold text-white transition-colors hover:bg-black">
-              Buy Now
-            </button>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
