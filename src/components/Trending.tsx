@@ -14,7 +14,7 @@ const products = [
     middleNote: "Iris, White Tea",
     topNote: "Mint",
     price: "$145.00",
-    image: "/perfume-bottle.png",
+    image: "/essence-collection.png",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const products = [
     middleNote: "Peony, Rose",
     topNote: "Jasmine",
     price: "$130.00",
-    image: "/essence-collection.png",
+    image: "/velmore-hero1.png",
   },
 ];
 
