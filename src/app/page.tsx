@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Collections from "@/components/Collections";
 import Trending from "@/components/Trending";
+import About from "@/components/About";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Collections />
       <Trending />
+      <About />
     </main>
   );
 }
