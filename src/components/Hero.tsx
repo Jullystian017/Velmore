@@ -19,11 +19,11 @@ export default function Hero() {
       {/* Left Content */}
       <div className="z-10 flex w-full flex-col items-start justify-center md:w-[60%] lg:w-1/2 md:-mt-20">
         <h1 className="mb-6 text-5xl font-bold leading-[1.1] tracking-tight text-neutral-900 sm:text-6xl lg:text-[72px]">
-          Amazing scent that<br />
-          reflects <span className="bg-gradient-to-r from-[#e8702a] to-[#d65f1a] bg-clip-text text-transparent">character</span>
+          Authentic luxury,<br />
+          student <span className="bg-gradient-to-r from-[#e8702a] to-[#d65f1a] bg-clip-text text-transparent">price</span>
         </h1>
-        <p className="mb-10 max-w-md text-lg leading-relaxed text-neutral-800/80 sm:text-xl font-medium line-clamp-2">
-          Velmore delivers distinctive fragrances with an elegant, modern touch - made for those who stand out
+        <p className="mb-10 max-w-md text-lg leading-relaxed text-neutral-500 sm:text-xl font-medium line-clamp-2">
+          Your favorite designer brands and local favorites, curated for students. 100% authentic decants for every style.
         </p>
 
         <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">

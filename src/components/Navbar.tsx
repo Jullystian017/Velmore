@@ -70,14 +70,18 @@ export default function Navbar() {
             </div>
 
             <nav className="flex flex-col space-y-8">
-              {['Home', 'About', 'Product'].map((item) => (
+              {[
+                { name: 'Home', href: '/' },
+                { name: 'About', href: '/about' },
+                { name: 'Product', href: '/product' }
+              ].map((item) => (
                 <Link 
-                  key={item} 
-                  href={`#${item.toLowerCase()}`} 
+                  key={item.name} 
+                  href={item.href} 
                   className="group flex items-center justify-between text-4xl font-bold tracking-tight text-neutral-900 transition-colors hover:text-[#e8702a]"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span>{item}</span>
+                  <span>{item.name}</span>
                   <ArrowRight className="h-6 w-6 opacity-0 -translate-x-4 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
                 </Link>
               ))}

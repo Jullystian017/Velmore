@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${outfit.variable} antialiased selection:bg-orange-200 selection:text-orange-900`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -4,7 +4,6 @@ import Trending from "@/components/Trending";
 import About from "@/components/About";
 import ProductGrid from "@/components/ProductGrid";
 import Testimonials from "@/components/Testimonials";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <About />
       <ProductGrid />
       <Testimonials />
-      <Footer />
     </main>
   );
 }

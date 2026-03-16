@@ -32,26 +32,26 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold mb-6">Navigation</h4>
-            <ul className="space-y-4">
-              <li>
-                <Link href="#" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
-                  <span>Home</span>
-                  <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
-                  <span>About</span>
-                  <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
-                  <span>Product</span>
-                  <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-              </li>
-            </ul>
+              <ul className="space-y-4">
+                <li>
+                  <Link href="/" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
+                    <span>Home</span>
+                    <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
+                    <span>About</span>
+                    <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/product" className="text-neutral-500 hover:text-white transition-all inline-flex items-center group">
+                    <span>Product</span>
+                    <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                </li>
+              </ul>
           </div>
 
           {/* Legal/Contact */}
