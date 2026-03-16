@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Collections from "@/components/Collections";
 import Trending from "@/components/Trending";
 import About from "@/components/About";
+import ProductGrid from "@/components/ProductGrid";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Collections />
       <Trending />
       <About />
+      <ProductGrid />
     </main>
   );
 }
