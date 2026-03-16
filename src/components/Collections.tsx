@@ -5,16 +5,19 @@ const collectionItems = [
     title: "Noir Collection",
     image: "/noir-collection.png",
     count: "30+ Perfume",
+    description: "Deep, mysterious, and sophisticated scents for the bold.",
   },
   {
     title: "Essence Collection",
     image: "/essence-collection.png",
     count: "25+ Perfume",
+    description: "Pure, timeless fragrances that capture nature's soul.",
   },
   {
     title: "Botanica Collection",
     image: "/botanica-collection.png",
     count: "40+ Perfume",
+    description: "Fresh, floral, and vibrant aromas from the garden.",
   },
 ];
 
@@ -54,15 +57,18 @@ export default function Collections() {
                 </span>
               </div>
 
-              {/* Bottom Title */}
-              <div className="absolute bottom-10 left-8 z-10">
+              {/* Bottom Content */}
+              <div className="absolute bottom-10 left-8 right-8 z-10">
                 <h3 className="text-3xl font-bold text-white tracking-tight">
                   {item.title}
                 </h3>
+                <p className="mt-2 text-sm font-medium text-white/80 line-clamp-2">
+                  {item.description}
+                </p>
               </div>
 
               {/* Dark Gradient Overlay for Readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
             </div>
           ))}
         </div>
