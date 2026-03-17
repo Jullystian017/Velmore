@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const collections = [
   { src: "/botanica-collection.png", size: 280, top: "15%", left: "5%", delay: "0.2s" },
@@ -70,9 +71,14 @@ export default function About() {
           Authentic, premium fragrances curated for students, because luxury shouldn't be out of reach.
         </p>
 
-        <button className="rounded-full bg-white px-10 py-5 text-sm font-bold text-neutral-900 transition-all hover:bg-neutral-100 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] active:scale-95">
-          View our story
-        </button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link href="/product" className="rounded-full bg-white px-10 py-5 text-sm font-bold text-neutral-900 transition-all hover:bg-neutral-100 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] active:scale-95">
+            View our collection
+          </Link>
+          <Link href="/about" className="rounded-full border border-white/20 bg-white/5 px-10 py-5 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10 active:scale-95">
+            Our Story
+          </Link>
+        </div>
       </div>
 
       <style jsx>{`

@@ -1,23 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const collectionItems = [
   {
-    title: "Noir Collection",
+    title: "Designer Icons",
     image: "/noir-collection.png",
-    count: "30+ Perfume",
-    description: "Deep, mysterious, and sophisticated scents for the bold.",
+    count: "World Class",
+    description: "The world's most iconic designer labels: Dior, Versace, Chanel, and more.",
   },
   {
-    title: "Essence Collection",
-    image: "/essence-collection.png",
-    count: "25+ Perfume",
-    description: "Pure, timeless fragrances that capture nature's soul.",
-  },
-  {
-    title: "Botanica Collection",
+    title: "Local Legends",
     image: "/botanica-collection.png",
-    count: "40+ Perfume",
-    description: "Fresh, floral, and vibrant aromas from the garden.",
+    count: "Indonesian Pride",
+    description: "The best of Indonesian perfumery: HMNS, Alchemist, and Mykonos.",
+  },
+  {
+    title: "Signature Decants",
+    image: "/essence-collection.png",
+    count: "Premium Quality",
+    description: "Authentic luxury in affordable sizes, curated specially for your style.",
   },
 ];
 
@@ -39,9 +40,10 @@ export default function Collections() {
         {/* Collections Grid */}
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {collectionItems.map((item, index) => (
-            <div
+            <Link
+              href="/product"
               key={index}
-              className="group relative h-[450px] overflow-hidden rounded-3xl shadow-sm transition-all hover:shadow-xl"
+              className="group relative h-[450px] overflow-hidden rounded-3xl shadow-sm transition-all hover:shadow-xl block"
             >
               <Image
                 src={item.image}
@@ -69,7 +71,7 @@ export default function Collections() {
 
               {/* Dark Gradient Overlay for Readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
-            </div>
+            </Link>
           ))}
         </div>
       </div>

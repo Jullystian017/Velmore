@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, ShoppingBag } from "lucide-react";
 
 interface Product {
@@ -152,10 +153,10 @@ export default function Trending() {
               <span className="text-3xl font-bold tracking-tight text-[#e8702a]">
                 {currentProduct.price}
               </span>
-              <button className="flex items-center space-x-2 rounded-full bg-neutral-900 px-8 py-4 text-sm font-bold text-white transition-all hover:bg-black hover:shadow-xl active:scale-95">
+              <Link href="/product" className="flex items-center space-x-2 rounded-full bg-neutral-900 px-8 py-4 text-sm font-bold text-white transition-all hover:bg-black hover:shadow-xl active:scale-95">
                 <ShoppingBag className="h-4 w-4" />
                 <span>I want this</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
