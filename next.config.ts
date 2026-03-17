@@ -58,6 +58,31 @@ const nextConfig: NextConfig = {
         hostname: '*.perfumenz.co.nz',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'allparfume.by',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 's1.thcdn.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 's1.thcdn.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.thcdn.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: '*.thcdn.com',
+        pathname: '/**',
+      },
     ],
   },
 };

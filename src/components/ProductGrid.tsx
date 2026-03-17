@@ -59,7 +59,7 @@ const products: Product[] = [
 
 export default function ProductGrid() {
   return (
-    <section className="w-full bg-[#fdfdfd] py-24 px-6 md:px-12 lg:px-24">
+    <section className="w-full bg-white py-24 px-6 md:px-12 lg:px-24">
       <div className="mx-auto max-w-7xl text-center">
         {/* Section Header */}
         <div className="mb-16">
@@ -85,7 +85,7 @@ export default function ProductGrid() {
                   src={product.url || product.image || ""}
                   alt={product.name}
                   fill
-                  className="object-contain p-4 transition-transform duration-700 group-hover:scale-110"
+                  className="object-contain p-4 transition-transform duration-700 group-hover:scale-110 mix-blend-multiply"
                 />
 
                 {/* Badge Logic */}

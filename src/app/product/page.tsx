@@ -11,8 +11,8 @@ const products = [
     name: "Dior Sauvage",
     category: "International",
     scents: "Raw, fresh, and noble. The ultimate designer statement.",
-    price: "$12.00",
-    image: "/velmore-hero2.png",
+    price: "Rp 185.000",
+    image: "https://allparfume.by/images/parfumes/christian_dior_sauvage_eau_de_parfum_2018.jpg",
     badge: "Student Fav",
     notes: { top: "Bergamot", middle: "Sichuan Pepper", base: "Ambroxan" }
   },
@@ -20,8 +20,8 @@ const products = [
     name: "HMNS Orgasm",
     category: "Local Brand",
     scents: "The best-selling floral fruity amber from Indonesia.",
-    price: "$8.00",
-    image: "/essence-collection.png",
+    price: "Rp 45.000",
+    image: "https://down-id.img.susercontent.com/file/sg-11134201-22100-azqkh6rnkciv4f",
     badge: "Best Seller",
     notes: { top: "Red Apple", middle: "Rose", base: "Amber" }
   },
@@ -29,8 +29,8 @@ const products = [
     name: "Versace Eros",
     category: "International",
     scents: "Vibrant, intense, and glowing. Perfect for night outs.",
-    price: "$10.00",
-    image: "/noir-collection.png",
+    price: "Rp 135.000",
+    image: "http://s1.thcdn.com/productimg/1600/1600/11034083-3104533774594048.jpg",
     badge: "Trending",
     notes: { top: "Mint", middle: "Green Apple", base: "Vanilla" }
   },
@@ -38,17 +38,17 @@ const products = [
     name: "Alchemist Pink Powder",
     category: "Local Brand",
     scents: "Elegant powdery scent for a clean and classy vibe.",
-    price: "$9.00",
-    image: "/product-noxen.png",
+    price: "Rp 55.000",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-8224t-mfvxpm24j2mied",
     notes: { top: "Pink Pepper", middle: "Rose", base: "Musk" }
   },
   {
     name: "Bleu de Chanel",
     category: "International",
     scents: "Timeless, woody, and aromatic. A true blue fragrance.",
-    price: "$15.00",
-    originalPrice: "$18.00",
-    image: "/product-salvia.png",
+    price: "Rp 215.000",
+    originalPrice: "Rp 250.000",
+    image: "https://essentia.com.do/wp-content/uploads/2024/02/BLEU-DE-CHANEL-DECANT.png",
     badge: "Top Decant",
     notes: { top: "Lemon", middle: "Mint", base: "Sandalwood" }
   },
@@ -56,24 +56,24 @@ const products = [
     name: "Mykonos Aphrodite",
     category: "Local Brand",
     scents: "Sweet peach and white florals for an enchanting aura.",
-    price: "$6.50",
-    image: "/product-lavelle.png",
+    price: "Rp 42.000",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-7r98y-lmih8br0tj1dec",
     notes: { top: "Peach", middle: "Jasmine", base: "Vanilla" }
   },
   {
     name: "Dior Addict",
     category: "International",
     scents: "Heady and intoxicating floral with a warm vanilla base.",
-    price: "$14.00",
-    image: "/product-elara.png",
+    price: "Rp 195.000",
+    image: "https://cdn.shopify.com/s/files/1/2170/5343/products/Dior_Addict_Eau_Frache_Eau_de_Toilette_Spray_100ml_-_Box_Product__42921.1572610962_2048x2048.jpg?v=1584646235",
     notes: { top: "Mandarin", middle: "Jasmine", base: "Vanilla" }
   },
   {
     name: "HMNS Alpha",
     category: "Local Brand",
     scents: "Clean, fresh, and energizing green scent.",
-    price: "$7.00",
-    image: "/product-solene.png",
+    price: "Rp 45.000",
+    image: "http://cdn.shopify.com/s/files/1/0249/6341/6160/products/alpha_1200x1200.png?v=1676979115",
     notes: { top: "Citrus", middle: "Green Tea", base: "Cedarwood" }
   },
 ];
@@ -90,7 +90,7 @@ export default function ProductPage() {
   });
 
   return (
-    <main className="flex min-h-screen flex-col items-center bg-[#fdfdfd] pt-32 px-6 md:px-12 lg:px-24">
+    <main className="flex min-h-screen flex-col items-center bg-white pt-32 px-6 md:px-12 lg:px-24">
       {/* Catalog Header */}
       <section className="w-full max-w-7xl mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
@@ -139,34 +139,34 @@ export default function ProductPage() {
         </div>
       </section>
 
-      {/* Product Grid */}
+      {/* Product Grid - Modern Border Grid */}
       <section className="w-full max-w-7xl pb-32">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 border-l border-t border-neutral-200 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredProducts.map((product, index) => (
-            <div key={index} className="group flex flex-col items-start text-left">
+            <div key={index} className="group flex flex-col items-start p-8 text-left transition-all hover:bg-neutral-100/30 border-r border-b border-neutral-200">
               {/* Image Card */}
-              <div className="relative mb-6 aspect-[3/4] w-full overflow-hidden rounded-[40px] bg-[#F5F5F5] transition-all group-hover:bg-[#EEEEEE] group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+              <div className="relative mb-6 aspect-square w-full overflow-hidden transition-all">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain p-12 transition-transform duration-700 group-hover:scale-110"
+                  className="object-contain p-4 transition-transform duration-700 group-hover:scale-110 mix-blend-multiply"
                 />
                 
                 {/* Overlay Icons */}
-                <div className="absolute top-6 right-6 opacity-0 translate-y-4 transition-all group-hover:opacity-100 group-hover:translate-y-0">
-                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md text-neutral-900 hover:text-red-500">
+                <div className="absolute top-0 right-0 opacity-0 translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0">
+                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md text-neutral-900 hover:text-red-500 border border-neutral-100">
                     <Heart className="h-5 w-5" />
                   </button>
                 </div>
 
                 {/* Badge */}
                 {product.badge && (
-                  <div className="absolute top-6 left-6">
+                  <div className="absolute top-0 left-0">
                     <span className={`rounded-full px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider shadow-sm ${
                       product.badge.includes('%') 
                         ? 'bg-[#4B3425] text-white' 
-                        : 'bg-white text-neutral-900'
+                        : 'bg-white text-neutral-900 border border-neutral-200'
                     }`}>
                       {product.badge}
                     </span>
@@ -208,7 +208,7 @@ export default function ProductPage() {
                       </span>
                     )}
                   </div>
-                  <button className="p-3 bg-neutral-900 text-white rounded-full hover:bg-black transition-all active:scale-90">
+                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-white transition-all hover:bg-black hover:scale-110 active:scale-95">
                     <ShoppingBag className="h-5 w-5" />
                   </button>
                 </div>
