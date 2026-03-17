@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -27,9 +28,9 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-          <button className="flex items-center justify-center rounded-full bg-[#1c1c1c] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-black hover:shadow-lg active:scale-95">
+          <Link href="/product" className="flex items-center justify-center rounded-full bg-[#1c1c1c] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-black hover:shadow-lg active:scale-95">
             Discover collection
-          </button>
+          </Link>
           <button className="flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm px-8 py-3.5 text-base font-semibold text-neutral-900 shadow-sm transition-all hover:bg-white hover:shadow-md active:scale-95">
             Contact us
           </button>
