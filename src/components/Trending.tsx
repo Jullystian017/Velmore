@@ -4,39 +4,52 @@ import { useState } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, ShoppingBag } from "lucide-react";
 
-const products = [
+interface Product {
+  id: number;
+  name: string;
+  tags: string;
+  description: string;
+  baseNote: string;
+  middleNote: string;
+  topNote: string;
+  price: string;
+  image?: string;
+  url?: string;
+}
+
+const products: Product[] = [
   {
     id: 1,
     name: "Dior Sauvage",
     tags: "Bergamot, Sichuan Pepper, Ambroxan",
-    description: "The absolute classic. Dior Sauvage is a radically fresh composition, dictated by a name that has the ring of a manifesto. 100% authentic decant.",
+    description: "The absolute classic. Dior Sauvage is a radically fresh composition, dictated by a name that has the ring of a manifesto. Original full size bottle.",
     baseNote: "Ambroxan, Cedar",
     middleNote: "Lavender, Pink Pepper",
     topNote: "Calabrian Bergamot",
-    price: "$12.00",
-    image: "/velmore-hero2.png",
+    price: "Rp 2.450.000",
+    url: "https://cdn.notinoimg.com/detail_main_hq/dior/3348901567572_15/sauvage-elixir___240923.jpg",
   },
   {
     id: 2,
     name: "Versace Eros",
     tags: "Mint, Candy Apple, Vanilla",
-    description: "Love, passion, beauty, and desire. Versace Eros is a fragrance for a strong, passionate man, who is master of himself. Perfect for night outs.",
+    description: "Love, passion, beauty, and desire. Versace Eros is a fragrance for a strong, passionate man, who is master of himself. Original full size bottle.",
     baseNote: "Madagascar Vanilla",
     middleNote: "Tonka Bean, Geranium",
     topNote: "Mint, Green Apple",
-    price: "$10.00",
-    image: "/noir-collection.png",
+    price: "Rp 1.650.000",
+    url: "https://www.fashionbeans.com/wp-content/uploads/2023/07/gil.aroma_VersaceEros.jpg",
   },
   {
     id: 3,
     name: "HMNS Orgasm",
     tags: "Red Apple, Rose, Amber",
-    description: "Indonesia's best seller. HMNS Orgasm is a floral-fruity-amber scent that's sweet, elegant, and addictive. The perfect daily driver for students.",
+    description: "Indonesia's best seller. HMNS Orgasm is a floral-fruity-amber scent that's sweet, elegant, and addictive. Original full size bottle.",
     baseNote: "Amber, Caramel",
     middleNote: "Rose, Jasmine",
     topNote: "Red Apple",
-    price: "$8.00",
-    image: "/essence-collection.png",
+    price: "Rp 395.000",
+    url: "https://piimages.parfumo.de/4/2/221984_105e9d54988fc30517063d20a1be4b71_orgsm.jpg",
   },
 ];
 
@@ -96,7 +109,7 @@ export default function Trending() {
           <div className="relative p-4 md:p-6 w-full md:w-1/2 min-h-[400px] md:min-h-0">
             <div className="relative h-full w-full overflow-hidden rounded-2xl shadow-sm">
               <Image
-                src={currentProduct.image}
+                src={currentProduct.url || currentProduct.image || ""}
                 alt={currentProduct.name}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

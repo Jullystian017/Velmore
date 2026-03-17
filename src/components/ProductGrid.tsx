@@ -5,42 +5,42 @@ const products = [
   {
     name: "HMNS Alpha",
     scents: "Citrus, Grass, Cedarwood (5ml Decant)",
-    price: "$7.00",
+    price: "Rp 20.000",
     image: "/product-solene.png",
     badge: "Student Pick",
   },
   {
     name: "Alchemist Pink Powder",
     scents: "Powdery, Rose, Musk (5ml Decant)",
-    price: "$9.00",
+    price: "Rp 25.000",
     image: "/product-noxen.png",
     badge: "Top Rated",
   },
   {
     name: "Bleu de Chanel",
     scents: "Grapefruit, Mint, Sandalwood (5ml Decant)",
-    price: "$15.00",
-    originalPrice: "$18.00",
+    price: "Rp 45.000",
+    originalPrice: "Rp 55.000",
     image: "/product-salvia.png",
     badge: "15% OFF",
   },
   {
     name: "Dior Addict",
     scents: "Mandarin, Jasmine, Vanilla (5ml Decant)",
-    price: "$14.00",
+    price: "Rp 40.000",
     image: "/product-elara.png",
   },
   {
     name: "Versace Bright Crystal",
     scents: "Yuzu, Pomegranate, Peony (5ml Decant)",
-    price: "$11.00",
+    price: "Rp 32.000",
     image: "/product-eclipse.png",
   },
   {
     name: "Mykonos Aphrodite",
     scents: "Sweet Peach, White Floral (5ml Decant)",
-    price: "$6.50",
-    originalPrice: "$8.00",
+    price: "Rp 18.000",
+    originalPrice: "Rp 22.000",
     image: "/product-lavelle.png",
     badge: "Best Seller",
   },
@@ -73,15 +73,14 @@ export default function ProductGrid() {
                   fill
                   className="object-contain p-12 transition-transform duration-700 group-hover:scale-110"
                 />
-                
+
                 {/* Badge Logic */}
                 {product.badge && (
                   <div className="absolute top-6 left-6">
-                    <span className={`rounded-full px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider shadow-sm ${
-                      product.badge.includes('%') 
-                        ? 'bg-[#4B3425] text-white' 
+                    <span className={`rounded-full px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider shadow-sm ${product.badge.includes('%')
+                        ? 'bg-[#4B3425] text-white'
                         : 'bg-white text-neutral-900'
-                    }`}>
+                      }`}>
                       {product.badge}
                     </span>
                   </div>
