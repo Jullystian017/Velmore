@@ -2,22 +2,22 @@
 
 import Image from "next/image";
 
-const ingredients = [
-  { src: "/lavender.png", size: 180, top: "15%", left: "10%", delay: "0.2s" },
-  { src: "/rose.png", size: 220, top: "65%", left: "5%", delay: "0.5s" },
-  { src: "/citrus.png", size: 150, top: "12%", right: "15%", delay: "0.8s" },
-  { src: "/jasmine.png", size: 200, bottom: "5%", right: "12%", delay: "1.1s" },
-  { src: "/spices.png", size: 190, top: "25%", right: "2%", delay: "1.4s" },
-  { src: "/vanilla.png", size: 160, top: "45%", left: "-2%", delay: "1.7s" },
-  { src: "/lavender.png", size: 140, bottom: "8%", left: "25%", delay: "2.0s" },
+const collections = [
+  { src: "/botanica-collection.png", size: 280, top: "15%", left: "5%", delay: "0.2s" },
+  { src: "/product-eclipse.png", size: 220, top: "65%", left: "8%", delay: "0.5s" },
+  { src: "/noir-collection.png", size: 300, top: "12%", right: "10%", delay: "0.8s" },
+  { src: "/product-solene.png", size: 240, bottom: "5%", right: "8%", delay: "1.1s" },
+  { src: "/essence-collection.png", size: 260, top: "25%", right: "-2%", delay: "1.4s" },
+  { src: "/product-lavelle.png", size: 200, top: "45%", left: "-5%", delay: "1.7s" },
+  { src: "/product-noxen.png", size: 180, bottom: "8%", left: "20%", delay: "2.0s" },
 ];
 
 export default function About() {
   return (
     <section className="relative min-h-[150vh] w-full overflow-hidden bg-[#0A0A0A] pt-96 pb-80 px-6 flex flex-col justify-center">
-      {/* Scattered Ingredients Gallery */}
+      {/* Scattered Collections Gallery */}
       <div className="absolute inset-0 pointer-events-none hidden lg:block">
-        {ingredients.map((img, i) => (
+        {collections.map((img, i) => (
           <div
             key={i}
             className="absolute animate-float opacity-80 transition-all duration-1000 grayscale hover:grayscale-0"
@@ -34,7 +34,7 @@ export default function About() {
             <div className="group relative h-full w-full overflow-hidden rounded-[40px] shadow-2xl border border-white/10">
               <Image
                 src={img.src}
-                alt="perfume ingredient"
+                alt="curated collection"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -45,9 +45,9 @@ export default function About() {
 
       {/* Mobile/Tablet Simple Gallery */}
       <div className="mb-16 grid grid-cols-2 gap-4 lg:hidden">
-        {ingredients.slice(0, 4).map((img, i) => (
+        {collections.slice(0, 4).map((img, i) => (
           <div key={i} className="aspect-square relative overflow-hidden rounded-3xl border border-white/10">
-            <Image src={img.src} alt="ingredient" fill className="object-cover" />
+            <Image src={img.src} alt="collection" fill className="object-cover" />
           </div>
         ))}
       </div>
@@ -61,13 +61,13 @@ export default function About() {
         </div>
 
         <h2 className="mb-8 text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-          Only high-quality<br />
-          parfume ingredients
+          Curated Luxury,<br />
+          Made Accessible
         </h2>
 
-        <p className="mx-auto mb-12 max-w-xl text-lg text-neutral-400 leading-relaxed md:text-xl">
-          We create perfumes that can be enjoyed to the fullest, 
-          using ingredients whose quality is beyond doubt.
+        <p className="mx-auto mb-12 max-w-2xl text-lg text-neutral-400 leading-relaxed md:text-xl">
+          We bring you the world's most iconic designer labels and rising local stars. 
+          Authentic, premium fragrances curated for students, because luxury shouldn't be out of reach.
         </p>
 
         <button className="rounded-full bg-white px-10 py-5 text-sm font-bold text-neutral-900 transition-all hover:bg-neutral-100 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] active:scale-95">
